@@ -1,0 +1,45 @@
+.boton, .boton-alternativo, .boton-secundario, .boton-principal {
+  width: 250px;
+  height: 75px;
+  margin: 0 20px;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.5s linear;
+}
+.boton:hover, .boton-alternativo:hover, .boton-secundario:hover, .boton-principal:hover {
+  transform: translateY(5px);
+  cursor: pointer;
+  border-bottom: 3px solid #000;
+}
+.boton-principal {
+  background-color: #fe001a;
+}
+.boton-secundario {
+  background-color: #fff;
+  color: #000;
+}
+.boton-alternativo {
+  border: 3px solid #000;
+}
+
+.flex, .flex-column, .flex-column-around, .flex-column-around-center, .flex-row, .flex-row-around, .flex-row-around-center {
+  display: flex;
+}
+.flex-row, .flex-row-around, .flex-row-around-center {
+  flex-direction: row;
+}
+.flex-row-around, .flex-row-around-center {
+  justify-content: space-around;
+}
+.flex-row-around-center {
+  align-items: center;
+}
+.flex-column, .flex-column-around, .flex-column-around-center {
+  flex-direction: column;
+}
+.flex-column-around, .flex-column-around-center {
+  justify-content: space-around;
+}
+.flex-column-around-center {
+  align-items: center;
+}/*# sourceMappingURL=main.css.map */

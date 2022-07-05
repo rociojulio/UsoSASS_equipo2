@@ -1,0 +1,76 @@
+// VARIABLES
+// todo lo que sea un valor de una propiedad por ejemplo
+// color: valor;
+// font-size: valor;
+
+// COLORES EN LA WEB 70% 20% 10%
+// el del 70% es el color que predomina
+// el del 20% es un secundario
+// el del 10% en el último
+// sirve para no usar muchos colores
+
+$color-principal: #fe001a;
+$color-secundario: #fff;
+$color-alternativo: #000;
+
+// NESTING
+
+// COMPONENTE BOTON
+
+.boton {
+  width: 250px;
+  height: 75px;
+  margin: 0 20px;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.5s linear;
+  // NESTING
+  &:hover {
+    transform: translateY(5px);
+    cursor: pointer;
+    border-bottom: 3px solid $color-alternativo;
+  }
+  &-principal {
+    @extend .boton;
+    // extend trae todas propiedades que yo quiero aplicar de una clase
+    background-color: $color-principal;
+  }
+  &-secundario {
+    @extend .boton;
+    background-color: $color-secundario;
+    color: $color-alternativo;
+  }
+  &-alternativo {
+    @extend .boton;
+    border: 3px solid $color-alternativo;
+  }
+}
+
+.flex {
+  display: flex;
+  &-row {
+    @extend .flex;
+    flex-direction: row;
+    &-around {
+      @extend .flex-row;
+      justify-content: space-around;
+      &-center {
+        @extend .flex-row-around;
+        align-items: center
+      }
+    }
+  }
+
+  &-column {
+    @extend .flex;
+    flex-direction: column;
+    &-around {
+      @extend .flex-column;
+      justify-content: space-around;
+      &-center {
+        @extend .flex-column-around;
+        align-items: center
+      }
+    }
+  }
+}
